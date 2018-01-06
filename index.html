@@ -10,6 +10,17 @@
 		<script src="js/jquery.scrolly.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/init.js"></script>
+		<script>
+			$(document).ready(function() {
+				var sent = localStorage.getItem('email_sent');
+				if(sent){
+					$("#email_sent").show();
+					localStorage.setItem('email_sent', '');
+				}else{
+					$("#email_sent").hide();
+				}
+			});
+		</script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -318,7 +329,7 @@
 				</header>
 				<div class="content style4 featured">
 					<div class="container 75%">
-						<form method="post" action="http://formspree.io/beautifeyebrows@yahoo.com">
+						<form method="post" onsubmit="localStorage.setItem('email_sent', 'true'); return true;" action="http://formspree.io/beautifeyebrows@yahoo.com">
 							<div class="row 50%">
 								<div class="6u"><input type="text" placeholder="Name" name="name" /></div>
 								<div class="6u"><input type="text" placeholder="Email" name="email" /></div>
@@ -337,6 +348,7 @@
 								</div>
 							</div>
 						</form>
+						<div id="email_thank">Thank you your email has been sent.</div>
 					</div>
 				</div>
 			</section>
