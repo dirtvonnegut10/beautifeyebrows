@@ -1,9 +1,3 @@
-/*
-	Tessellate by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 (function($) {
 
 	skel.init({
@@ -21,14 +15,14 @@
 
 		var	$window = $(window),
 			$body = $('body');
-			
+
 		// Disable animations/transitions until the page has loaded.
 			$body.addClass('is-loading');
-			
+
 			$window.on('load', function() {
 				$body.removeClass('is-loading');
 			});
-			
+
 		// Forms (IE<10).
 			var $form = $('form');
 			if ($form.length > 0) {
@@ -51,10 +45,10 @@
 						})
 						.on('blur', function() {
 							$(this).parent().removeClass('focus');
-						});						
+						});
 
 			}
-			
+
 		// CSS polyfills (IE<9).
 			if (skel.vars.IEVersion < 9)
 				$(':last-child').addClass('last-child');
