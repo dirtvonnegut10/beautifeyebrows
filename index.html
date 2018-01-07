@@ -10,17 +10,6 @@
 		<script src="js/jquery.scrolly.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/init.js"></script>
-		<script>
-			$(document).ready(function() {
-				var sent = localStorage.getItem('email_sent');
-				if(sent){
-					$("#email_sent").show();
-					localStorage.setItem('email_sent', '');
-				}else{
-					$("#email_sent").hide();
-				}
-			});
-		</script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -348,7 +337,6 @@
 								</div>
 							</div>
 						</form>
-						<div id="email_thank">Thank you your email has been sent.</div>
 					</div>
 				</div>
 			</section>
