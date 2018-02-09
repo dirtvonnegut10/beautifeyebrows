@@ -33,30 +33,56 @@
 		<script src="photoswipe/photoswipe-ui-default.min.js"></script>
 
 		<script>
-			var pswpElement = document.querySelectorAll('.pswp')[0];
-			// build items array
-			var items = [
-			    {
-						src: 'https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg',
-            w: 964,
-            h: 1024
-        },
-        {
-            src: 'https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg',
-            w: 1024,
-            h: 683
-        }
-			];
+			$( document ).ready(function() {
 
-			// define options (if needed)
-			var options = {
-			    // optionName: 'option value'
-			    // for example:
-			    index: 0 // start at first slide
-			};
-			// Initializes and opens PhotoSwipe
-			var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-			gallery.init();
+				$("#image1, #image2, #image3, #image4, #image5, #image6").click(function() {
+					var whatImage = $(this).attr( 'value' );
+					var pswpElement = document.querySelectorAll('.pswp')[0];
+					// build items array
+					var items = [
+					    {
+								src: 'images/brw1_lrg.jpg',
+		            w: 1024,
+		            h: 1024
+		        },
+		        {
+		            src: 'images/brw3_lrg.jpg',
+		            w: 1024,
+		            h: 1024
+		        },
+						{
+		            src: 'images/brw4_lrg.jpg',
+		            w: 1024,
+		            h: 1024
+		        },
+						{
+		            src: 'images/brw5_lrg.jpg',
+		            w: 1024,
+		            h: 1024
+		        },
+						{
+		            src: 'images/brw6_lrg.jpg',
+		            w: 1024,
+		            h: 1024
+		        },
+						{
+		            src: 'images/brw7_lrg.jpg',
+		            w: 1024,
+		            h: 1024
+		        }
+					];
+
+					// define options (if needed)
+					var options = {
+					    // optionName: 'option value'
+					    // for example:
+					    index: whatImage // start at selected image
+					};
+					// Initializes and opens PhotoSwipe
+					var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+					gallery.init();
+				});
+			});
 		</script>
 
 		<!--end of photoswipe-->
@@ -80,7 +106,7 @@
 					Microblading + Shading: $450</p>
 				</header>
 				<footer>
-					<a href="#work" class="button scrolly">my work</a>
+					<a href="#work" class="button scrolly">My Work</a>
 				</footer>
 			</section>
 
@@ -124,16 +150,16 @@
 							</div>
 							<div class="8u">
 								<div class="row no-collapse">
-									<div class="6u"><a href="" class="image fit"><img src="images/brw1.jpg" alt="" /></a></div>
-									<div class="6u"><a href="" class="image fit"><img src="images/brw7.jpg" alt="" /></a></div>
+									<div class="6u"><a value="0" id="image1" class="image fit"><img src="images/brw1.jpg" alt="" /></a></div>
+									<div class="6u"><a value="1" id="image2" class="image fit"><img src="images/brw7.jpg" alt="" /></a></div>
 								</div>
 								<div class="row no-collapse">
-									<div class="6u"><a href="" class="image fit"><img src="images/brw3.jpg" alt="" /></a></div>
-									<div class="6u"><a href="" class="image fit"><img src="images/brw4.jpg" alt="" /></a></div>
+									<div class="6u"><a value="2" id="image3" class="image fit"><img src="images/brw3.jpg" alt="" /></a></div>
+									<div class="6u"><a value="3" id="image4" class="image fit"><img src="images/brw4.jpg" alt="" /></a></div>
 								</div>
 								<div class="row no-collapse">
-									<div class="6u"><a href="" class="image fit"><img src="images/brw5.jpg" alt="" /></a></div>
-									<div class="6u"><a href="" class="image fit"><img src="images/brw6.jpg" alt="" /></a></div>
+									<div class="6u"><a value="4" id="image5" class="image fit"><img src="images/brw5.jpg" alt="" /></a></div>
+									<div class="6u"><a value="5" id="image6" class="image fit"><img src="images/brw6.jpg" alt="" /></a></div>
 								</div>
 							</div>
 						</div>
@@ -268,7 +294,6 @@
 
 
 			<!-- Root element of PhotoSwipe. Must have class pswp. -->
-			<button id="btn">Open PhotoSwipe</button>
 			<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 			    <!-- Background of PhotoSwipe.
 			         It's a separate element as animating opacity is faster than rgba(). -->
