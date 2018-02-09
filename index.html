@@ -36,37 +36,38 @@
 			$( document ).ready(function() {
 
 				$("#image1, #image2, #image3, #image4, #image5, #image6").click(function() {
-					var whatImage = $(this).attr( 'value' );
+					var whatImageS = $(this).attr( 'value' );
+					var whatInt = parseInt(whatImageS);
 					var pswpElement = document.querySelectorAll('.pswp')[0];
 					// build items array
 					var items = [
 					    {
-								src: 'images/brw1_lrg.jpg',
+								src: 'images/brw1.jpg',
 		            w: 1024,
 		            h: 1024
 		        },
 		        {
-		            src: 'images/brw3_lrg.jpg',
+		            src: 'images/brw3.jpg',
 		            w: 1024,
 		            h: 1024
 		        },
 						{
-		            src: 'images/brw4_lrg.jpg',
+		            src: 'images/brw4.jpg',
 		            w: 1024,
 		            h: 1024
 		        },
 						{
-		            src: 'images/brw5_lrg.jpg',
+		            src: 'images/brw5.jpg',
 		            w: 1024,
 		            h: 1024
 		        },
 						{
-		            src: 'images/brw6_lrg.jpg',
+		            src: 'images/brw6.jpg',
 		            w: 1024,
 		            h: 1024
 		        },
 						{
-		            src: 'images/brw7_lrg.jpg',
+		            src: 'images/brw7.jpg',
 		            w: 1024,
 		            h: 1024
 		        }
@@ -76,7 +77,7 @@
 					var options = {
 					    // optionName: 'option value'
 					    // for example:
-					    index: whatImage // start at selected image
+					    index: whatInt // start at selected image
 					};
 					// Initializes and opens PhotoSwipe
 					var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
@@ -106,7 +107,7 @@
 					Microblading + Shading: $450</p>
 				</header>
 				<footer>
-					<a href="#work" class="button scrolly">My Work</a>
+					<a href="#pics-all" class="button scrolly">My Work</a>
 				</footer>
 			</section>
 
@@ -148,7 +149,7 @@
 									</p>
 								</section>
 							</div>
-							<div class="8u">
+							<div class="8u" id="pics-all">
 								<div class="row no-collapse">
 									<div class="6u"><a value="0" id="image1" class="image fit"><img src="images/brw1.jpg" alt="" /></a></div>
 									<div class="6u"><a value="1" id="image2" class="image fit"><img src="images/brw7.jpg" alt="" /></a></div>
